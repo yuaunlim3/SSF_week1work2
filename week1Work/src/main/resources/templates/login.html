@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Loading Page</h1>   
+    <form method = "POST" action="/sercet" data-th-object = "${INFO}">    
+        <table>
+        <tr>
+            <td>Name: </td>
+            <td>
+                <input type="text" data-th-field = "*{name}">
+            </td>
+        </tr>
+        <tr>
+            <td>Password </td>
+            <td>
+                <input type="text" data-th-field = "*{password}">
+            </td>
+        </tr>
+        <tr data-th-if = "${counter == 3}">
+            <td>Your caption is <span data-th-text="${toGive}"></span> </td>
+            <td>
+                <input type="text" data-th-field = "*{caption}">
+            </td>
+        </tr> 
+        <tr>
+            <td>
+                <button type = "submit">Login</button>
+            </td>
+        </tr>
+    </table>
+    </form> 
+    <p>Login attempts: <span data-th-text = "${counter}"></span></p>
+</body>
+</html>
